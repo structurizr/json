@@ -359,6 +359,10 @@ components:
           description: The set of child/nested deployment nodes.
           items:
             $ref: '#/components/schemas/DeploymentNode'
+        infrastructureNodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InfrastructureNode'
         containerInstances:
           type: array
           description: The set of container instances running in this deployment node..
@@ -371,6 +375,41 @@ components:
         relationships:
           type: array
           description: The set of relationships from this deployment node to other elements.
+          items:
+            $ref: '#/components/schemas/Relationship'
+            
+    InfrastructureNode:
+      type: object
+      description: An infrastructure node.
+      properties:
+        id:
+          type: string
+          description: The ID of this infrastructure node in the model.
+        name:
+          type: string
+          description: The name of this infrastructure node.
+        description:
+          type: string
+          description: A short description of this infrastructure node.
+        technology:
+          type: string
+          description: The technology associated with this infrastructure node (e.g. "Route 53").
+        environment:
+          type: string
+          description: The deployment environment in which this infrastructure node resides (e.g. "Development", "Live", etc).
+        tags:
+          type: string
+          description: A comma separated list of tags associated with this infrastructure node.
+        url:
+          type: string
+          description: The URL where more information about this element can be found.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
+        relationships:
+          type: array
+          description: The set of relationships from this infrastructure node to other elements.
           items:
             $ref: '#/components/schemas/Relationship'
 
@@ -615,12 +654,12 @@ components:
           description: Specifies whether the enterprise boundary (to differentiate internal elements from external elements") should be visible on the resulting diagram.
         elements:
           type: array
-          description: The set of elements in this views.
+          description: The set of elements in this view.
           items:
             $ref: '#/components/schemas/ElementView'
         relationships:
           type: array
-          description: The set of relationships in this views.
+          description: The set of relationships in this view.
           items:
             $ref: '#/components/schemas/RelationshipView'
         animations:
@@ -749,6 +788,9 @@ components:
           description: The set of animation steps (optional).
           items:
             $ref: '#/components/schemas/AnimationStep'
+        externalContainersBoundariesVisible:
+          type: boolean
+          description: Specifies whether container boundaries should be visible for "external" components (those outside the container in scope).
 
     DynamicView:
       type: object
@@ -1098,6 +1140,7 @@ components:
           enum:
             - Box
             - RoundedBox
+            - Component
             - Circle
             - Ellipse
             - Hexagon
@@ -1118,6 +1161,7 @@ components:
           enum:
             - Solid
             - Dashed
+            - Dotted
         opacity:
           type: number
           format: integer
