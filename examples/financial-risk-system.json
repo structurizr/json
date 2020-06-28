@@ -1,11 +1,6 @@
 {
-    "id": 31,
     "name": "Financial Risk System",
     "description": "This is a simple (incomplete) example C4 model based upon the financial risk system architecture kata, which can be found at http://bit.ly/sa4d-risksystem",
-    "revision": 3,
-    "lastModifiedDate": "2019-07-23T06:42:29Z",
-    "lastModifiedUser": "help@structurizr.com",
-    "lastModifiedAgent": "structurizr-web/1602",
     "model": {
         "people": [
             {
