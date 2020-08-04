@@ -110,7 +110,7 @@ components:
           $ref: '#/components/schemas/Views'
         documentation:
           $ref: '#/components/schemas/Documentation'
-        cofiguration:
+        configuration:
           $ref: '#/components/schemas/WorkspaceConfiguration'
 
     Model:
