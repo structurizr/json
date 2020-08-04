@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.4.0
+  version: 1.5.0
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -363,6 +363,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InfrastructureNode'
+        softwareSystemInstances:
+          type: array
+          description: The set of software systems instances running in this deployment node..
+          items:
+            $ref: '#/components/schemas/SoftwareSystemInstance'
         containerInstances:
           type: array
           description: The set of container instances running in this deployment node..
@@ -413,6 +418,40 @@ components:
           items:
             $ref: '#/components/schemas/Relationship'
 
+    SoftwareSystemInstance:
+      type: object
+      description: An instance of a software system, running on a deployment node.
+      properties:
+        id:
+          type: string
+          description: The ID of this software system instance in the model.
+        containerId:
+          type: string
+          description: The ID of the software system this is an instance of.
+        instanceId:
+          type: number
+          description: The number/index of this instance.
+        environment:
+          type: string
+          description: The deployment environment in which this software system instance resides (e.g. "Development", "Live", etc).
+        tags:
+          type: string
+          description: A comma separated list of tags associated with this software system instance.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
+        relationships:
+          type: array
+          description: The set of relationships from this software system instance to other elements.
+          items:
+            $ref: '#/components/schemas/Relationship'
+        healthChecks:
+          type: array
+          description: The set of HTTP-based health checks for this software system instance.
+          items:
+            $ref: '#/components/schemas/HttpHealthCheck'
+
     ContainerInstance:
       type: object
       description: An instance of a container, running on a deployment node.
@@ -431,14 +470,14 @@ components:
           description: The deployment environment in which this container instance resides (e.g. "Development", "Live", etc).
         tags:
           type: string
-          description: A comma separated list of tags associated with this container.
+          description: A comma separated list of tags associated with this container instance.
         properties:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
         relationships:
           type: array
-          description: The set of relationships from this container to other elements.
+          description: The set of relationships from this container instance to other elements.
           items:
             $ref: '#/components/schemas/Relationship'
         healthChecks:
@@ -962,6 +1001,9 @@ components:
         description:
           type: string
           description: The description of this relationship (used in dynamic views only).
+        response:
+          type: boolean
+          description: Signifies whether this relationship represents a return/response message (used in dynamic views only).
         order:
           type: string
           description: Gets the order of this relationship (used in dynamic views only; e.g. 1.0, 1.1, 2.0, etc).
