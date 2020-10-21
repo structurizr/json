@@ -425,7 +425,7 @@ components:
         id:
           type: string
           description: The ID of this software system instance in the model.
-        containerId:
+        softwareSystemId:
           type: string
           description: The ID of the software system this is an instance of.
         instanceId:
