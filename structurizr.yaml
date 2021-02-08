@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.5.0
+  version: 1.7.0
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -112,6 +112,10 @@ components:
           $ref: '#/components/schemas/Documentation'
         configuration:
           $ref: '#/components/schemas/WorkspaceConfiguration'
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
 
     Model:
       type: object
@@ -163,6 +167,9 @@ components:
             - External
             - Internal
             - Unspecified
+        group:
+          type: string
+          description: The name of the group in which this person should be included in.
         properties:
           type: object
           description: A set of arbitrary name-value properties.
@@ -204,6 +211,9 @@ components:
           description: The set of containers within this software system.
           items:
             $ref: '#/components/schemas/Container'
+        group:
+          type: string
+          description: The name of the group in which this software system should be included in.
         properties:
           type: object
           description: A set of arbitrary name-value properties.
@@ -242,6 +252,9 @@ components:
           description: The set of components within this container.
           items:
             $ref: '#/components/schemas/Component'
+        group:
+          type: string
+          description: The name of the group in which this container should be included in.
         properties:
           type: object
           description: A set of arbitrary name-value properties.
@@ -279,6 +292,9 @@ components:
           description: The set of code elements that make up this component.
           items:
             $ref: '#/components/schemas/CodeElement'
+        group:
+          type: string
+          description: The name of the group in which this component should be included in.
         properties:
           type: object
           description: A set of arbitrary name-value properties.
@@ -884,6 +900,9 @@ components:
           description: The set of relationships in this views.
           items:
             $ref: '#/components/schemas/RelationshipView'
+        externalBoundariesVisible:
+          type: boolean
+          description: Specifies software system/container boundaries should be visible for "external" containers/components (those outside the element in scope)
 
     DeploymentView:
       type: object
