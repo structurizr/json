@@ -1154,7 +1154,7 @@ components:
         logo:
           type: string
           format: url
-          description: A URL of a PNG/JPG/GIF file, or a Base64 data URI representation.
+          description: A Base64 data URI representation of a PNG/JPG/GIF file.
         font:
           type: object
           description: Represents a font, including a name and an optional URL for web fonts.
@@ -1215,7 +1215,7 @@ components:
             - Robot
         icon:
           type: string
-          description: A URL of a PNG/JPG/GIF file, or a Base64 data URI representation.
+          description: A Base64 data URI representation of a PNG/JPG/GIF file.
         border:
           type: string
           description: The type of border used to render the element.
