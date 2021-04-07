@@ -843,7 +843,7 @@ components:
           description: The set of animation steps (optional).
           items:
             $ref: '#/components/schemas/AnimationStep'
-        externalContainersBoundariesVisible:
+        externalContainerBoundariesVisible:
           type: boolean
           description: Specifies whether container boundaries should be visible for "external" components (those outside the container in scope).
 
