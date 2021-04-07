@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.7.0
+  version: 1.9.2
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -1205,6 +1205,7 @@ components:
             - Circle
             - Ellipse
             - Hexagon
+            - Diamond
             - Folder
             - Cylinder
             - Pipe
