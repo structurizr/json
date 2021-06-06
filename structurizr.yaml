@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.9.2
+  version: 1.9.5
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -640,6 +640,8 @@ components:
             - Slide_4_3
             - Slide_16_9
             - Slide_16_10
+        dimensions:
+          $ref: '#/components/schemas/Dimensions'
         automaticLayout:
           $ref: '#/components/schemas/AutomaticLayout'
         enterpriseBoundaryVisible:
@@ -702,6 +704,8 @@ components:
             - Slide_4_3
             - Slide_16_9
             - Slide_16_10
+        dimensions:
+          $ref: '#/components/schemas/Dimensions'
         automaticLayout:
           $ref: '#/components/schemas/AutomaticLayout'
         enterpriseBoundaryVisible:
@@ -764,6 +768,8 @@ components:
             - Slide_4_3
             - Slide_16_9
             - Slide_16_10
+        dimensions:
+          $ref: '#/components/schemas/Dimensions'
         automaticLayout:
           $ref: '#/components/schemas/AutomaticLayout'
         elements:
@@ -826,6 +832,8 @@ components:
             - Slide_4_3
             - Slide_16_9
             - Slide_16_10
+        dimensions:
+          $ref: '#/components/schemas/Dimensions'
         automaticLayout:
           $ref: '#/components/schemas/AutomaticLayout'
         elements:
@@ -888,6 +896,8 @@ components:
             - Slide_4_3
             - Slide_16_9
             - Slide_16_10
+        dimensions:
+          $ref: '#/components/schemas/Dimensions'
         automaticLayout:
           $ref: '#/components/schemas/AutomaticLayout'
         elements:
@@ -948,6 +958,8 @@ components:
             - Slide_4_3
             - Slide_16_9
             - Slide_16_10
+        dimensions:
+          $ref: '#/components/schemas/Dimensions'
         automaticLayout:
           $ref: '#/components/schemas/AutomaticLayout'
         elements:
@@ -1074,6 +1086,19 @@ components:
           description: The set of relationship IDs that should be included in this animation step.
           items:
             type: string
+
+    Dimensions:
+      type: object
+      description: Represents a width and height pair.
+      properties:
+        width:
+          type: number
+          format: integer
+          description: The width (pixels).
+        height:
+          type: number
+          format: integer
+          description: The height (pixels).
 
     AutomaticLayout:
       type: object
