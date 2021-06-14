@@ -10,7 +10,7 @@ The JSON format is __not__ designed to be authored manually. See [Structurizr - 
 * [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/structurizr/json/master/structurizr.yaml)
 * Examples
 	* [Getting Started](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/getting-started.json)
-	* [Financial Risk System](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/financial-risk-system.json)
+	* [Financial Risk System](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/financial-risk-system.json) (the JSON includes documentation, a different viewer renders [the diagram with documentation](https://structurizr.com/share/31/documentation/Financial%20Risk%20System))
 	* [Big Bank plc](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/big-bank-plc.json)
 	* [Amazon Web Services](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/amazon-web-services.json)
 
