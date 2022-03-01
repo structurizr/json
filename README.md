@@ -2,17 +2,13 @@
 
 # Structurizr JSON
 
-This GitHub repository contains the definition of the JSON schema for describing software architecture models based upon the [C4 model](https://c4model.com) with Structurizr. __This repository is supported by Structurizr Limited__, as a part of the Structurizr service.
+This GitHub repository contains the definition of the JSON schema for describing software architecture models based upon the [C4 model](https://c4model.com) with Structurizr.
 
-The JSON format is __not__ designed to be authored manually. See [Structurizr - Getting started](https://structurizr.com/help/getting-started) for details about creating software architecture models using code, text, or the UI.
+The JSON format is __not__ designed to be authored manually. See [structurizr.org - Authoring tools](https://structurizr.org/#authoring) for details about creating software architecture models using code-based libraries or text-based DSLs.
 
 * [OpenAPI 3.0 definition ](structurizr.yaml)
 * [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/structurizr/json/master/structurizr.yaml)
-* Examples
-	* [Getting Started](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/getting-started.json)
-	* [Financial Risk System](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/financial-risk-system.json)
-	* [Big Bank plc](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/big-bank-plc.json)
-	* [Amazon Web Services](https://structurizr.com/json?src=https://raw.githubusercontent.com/structurizr/json/master/examples/amazon-web-services.json)
+* [Examples](https://github.com/structurizr/examples)
 
 ## Workspace validation rules
 

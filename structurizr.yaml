@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.9.5
+  version: 1.12.0
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -224,6 +224,8 @@ components:
             elements.
           items:
             $ref: '#/components/schemas/Relationship'
+        documentation:
+          $ref: '#/components/schemas/Documentation'
 
     Container:
       type: object
@@ -1303,7 +1305,7 @@ components:
 
     Documentation:
       type: object
-      description: The documentation associated with this software architecture model.
+      description: A wrapper for documentation.
       properties:
         sections:
           type: array
@@ -1317,8 +1319,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Image'
-        template:
-          $ref: '#/components/schemas/DocumentationTemplateMetadata'
 
     DocumentationSection:
       type: object
@@ -1392,21 +1392,6 @@ components:
         type:
           type: string
           description: The image MIME type (e.g. "image/png").
-
-    DocumentationTemplateMetadata:
-      type: object
-      description: Information about the documentation template used to create the documentation.
-      properties:
-        name:
-          type: string
-          description: The name of the documentation template.
-        author:
-          type: string
-          description: The name of the author of the documentation template.
-        url:
-          type: string
-          format: url
-          description: A URL that points to more information about the documentation template.
 
     Terminology:
       type: object
