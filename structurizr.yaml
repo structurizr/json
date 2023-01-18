@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.12.0
+  version: 1.17.0
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -363,9 +363,8 @@ components:
           type: string
           description: The deployment environment in which this deployment node resides (e.g. "Development", "Live", etc).
         instances:
-          type: number
-          format: integer
-          description: The number of instances.
+          type: string
+          description: The number of instances; either a number (e.g. 1, 2, etc) or a range (e.g. 0..N, 0..*, 1..3, etc).
         tags:
           type: string
           description: A comma separated list of tags associated with this deployment node.
@@ -1215,6 +1214,10 @@ components:
         stroke:
           type: string
           description: The stroke colour of the element, as a HTML RGB hex string (e.g. '#000000').
+        strokeWidth:
+          type: number
+          format: integer
+          description: The width of the stroke, in pixels.
         color:
           type: string
           description: The foreground (text) colour of the element, as a HTML RGB hex string (e.g. '#ffffff').
