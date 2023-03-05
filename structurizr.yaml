@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.20.0
+  version: 1.22.0
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -266,6 +266,8 @@ components:
           description: The set of relationships from this container to other elements.
           items:
             $ref: '#/components/schemas/Relationship'
+        documentation:
+          $ref: '#/components/schemas/Documentation'
 
     Component:
       type: object
@@ -289,11 +291,6 @@ components:
         url:
           type: string
           description: The URL where more information about this element can be found.
-        code:
-          type: array
-          description: The set of code elements that make up this component.
-          items:
-            $ref: '#/components/schemas/CodeElement'
         group:
           type: string
           description: The name of the group in which this component should be included in.
@@ -306,42 +303,8 @@ components:
           description: The set of relationships from this component to other elements.
           items:
             $ref: '#/components/schemas/Relationship'
-
-    CodeElement:
-      type: object
-      description: Represents a code element (e.g. an interface, a class, a function, etc) that is part of the implementation of a component.
-      properties:
-        role:
-          type: string
-          description: The role of this code element.
-          enum:
-            - Primary
-            - Supporting
-        name:
-          type: string
-          description: The name of this code element.
-        type:
-          type: string
-          description: The type of the code element (e.g. a fully qualified Java interface or class name).
-        description:
-          type: string
-          description: A short description of this component.
-        url:
-          type: string
-          description: The URL where more information about this element can be found.
-        language:
-          type: string
-          description: The programming language of this code element (e.g. "Java", "C#", etc).
-        category:
-          type: string
-          description: The category of code element; e.g. class, interface, etc.
-        visibility:
-          type: string
-          description: The visibility of the code element; e.g. public, package, private.
-        size:
-          type: number
-          format: integer
-          description: The size of the code element; e.g. the number of lines.
+        documentation:
+          $ref: '#/components/schemas/Documentation'
 
     DeploymentNode:
       type: object
@@ -1328,9 +1291,6 @@ components:
       type: object
       description: A documentation section.
       properties:
-        title:
-          type: string
-          description: The title (name/section heading) of the section.
         content:
           type: string
           description: The Markdown or AsciiDoc content of the section.
@@ -1344,9 +1304,6 @@ components:
           type: number
           format: integer
           description: The order (index) of the section in the document.
-        elementId:
-          type: string
-          description: The ID of the element (in the model) that this section applies to (optional).
 
     Decision:
       type: object
