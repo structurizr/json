@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.22.0
+  version: 1.22.1
   title: Structurizr
   description: The web API for Structurizr.
 servers:
