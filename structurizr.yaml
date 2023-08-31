@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.22.1
+  version: 1.26.1
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -1385,12 +1385,18 @@ components:
 
     WorkspaceConfiguration:
       type: object
-      description: The workspace configuration.
+      description: The workspace configuration (for Structurizr cloud service and on-premises installation).
       properties:
         users:
           type: array
           items:
             $ref: '#/components/schemas/User'
+        visibility:
+          type: string
+          description: The visibility of the workspace 
+          enum:
+            - Public
+            - Private
 
     User:
       type: object
