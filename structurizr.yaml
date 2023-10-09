@@ -553,7 +553,7 @@ components:
           description: The set of dynamic views.
           items:
             $ref: '#/components/schemas/DynamicView'
-        deploymentView:
+        deploymentViews:
           type: array
           description: The set of deployment views.
           items:
