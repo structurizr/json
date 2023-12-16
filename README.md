@@ -1,8 +1,11 @@
 # Structurizr JSON
 
-This GitHub repository contains the definition of the JSON schema for describing software architecture models based upon the [C4 model](https://c4model.com) with Structurizr.
+This GitHub repository contains the definition of the JSON schema for describing software architecture models based
+upon the [C4 model](https://c4model.com),
+and is the data storage format used by the [Structurizr tooling](https://docs.structurizr.com).
 
-The JSON format is __not__ designed to be authored manually. See [Authoring tools](https://github.com/structurizr#authoring-tools) for details about creating software architecture models using code-based libraries or text-based DSLs.
+The JSON format is __not__ designed to be authored manually - the [Structurizr DSL](https://docs.structurizr.com/dsl)
+is the recommended tool for creating a workspace. 
 
 * [OpenAPI 3.0 definition ](structurizr.yaml)
 * [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/structurizr/json/master/structurizr.yaml)
