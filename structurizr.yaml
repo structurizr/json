@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.26.1
+  version: 1.28.1
   title: Structurizr
   description: The web API for Structurizr.
 servers:
@@ -174,6 +174,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           items:
@@ -218,6 +223,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this software system to other
@@ -261,6 +271,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this container to other elements.
@@ -298,6 +313,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this component to other elements.
@@ -357,12 +377,17 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this deployment node to other elements.
           items:
             $ref: '#/components/schemas/Relationship'
-            
+
     InfrastructureNode:
       type: object
       description: An infrastructure node.
@@ -392,6 +417,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this infrastructure node to other elements.
@@ -421,6 +451,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this software system instance to other elements.
@@ -455,6 +490,11 @@ components:
           type: object
           description: A set of arbitrary name-value properties.
           additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this element.
         relationships:
           type: array
           description: The set of relationships from this container instance to other elements.
@@ -505,6 +545,15 @@ components:
         url:
           type: string
           description: The URL where more information about this relationship can be found.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
+        perspectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Perspective'
+          description: The set of perspectives associated with this relationship.
         sourceId:
           type: string
           description: The ID of the source element.
@@ -523,6 +572,20 @@ components:
         linkedRelationshipId:
           type: string
           description: The ID of the container-container relationship upon which this container instance-container instance relationship is based.
+
+    Perspective:
+      type: object
+      description: Represents an architectural perspective, that can be applied to elements and relationships.
+      properties:
+        name:
+          type: string
+          description: The name of this perspective (e.g. "Security").
+        description:
+          type: string
+          description: The description of this perspective.
+        value:
+          type: string
+          description: The value of this perspective (optional).
 
     Views:
       type: object
