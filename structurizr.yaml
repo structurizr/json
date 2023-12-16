@@ -642,15 +642,22 @@ components:
       type: object
       description: A system landscape view.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: A unique identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         paperSize:
           type: string
           description: The paper size that should be used to render this view.
@@ -698,24 +705,27 @@ components:
           description: The set of animation steps (optional).
           items:
             $ref: '#/components/schemas/AnimationStep'
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     SystemContextView:
       type: object
       description: A system context view.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: A unique identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         softwareSystemId:
           type: string
           description: The ID of the software system this view is associated with.
@@ -766,24 +776,27 @@ components:
           description: The set of animation steps (optional).
           items:
             $ref: '#/components/schemas/AnimationStep'
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     ContainerView:
       type: object
       description: A container view.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: A unique identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         softwareSystemId:
           type: string
           description: The ID of the software system this view is associated with.
@@ -834,24 +847,27 @@ components:
         externalSoftwareSystemBoundariesVisible:
           type: boolean
           description: Specifies whether software system boundaries should be visible for "external" containers (those outside the software system in scope).
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     ComponentView:
       type: object
       description: A component view.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: A unique identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         containerId:
           type: string
           description: The ID of the container this view is associated with.
@@ -902,24 +918,27 @@ components:
         externalContainerBoundariesVisible:
           type: boolean
           description: Specifies whether container boundaries should be visible for "external" components (those outside the container in scope).
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     DynamicView:
       type: object
       description: A dynamic view.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: An identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         elementId:
           type: string
           description: The ID of the element this view is associated with (optional).
@@ -965,24 +984,27 @@ components:
         externalBoundariesVisible:
           type: boolean
           description: Specifies software system/container boundaries should be visible for "external" containers/components (those outside the element in scope)
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     DeploymentView:
       type: object
       description: A deployment view.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: A unique identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         softwareSystemId:
           type: string
           description: The ID of the software system this view is associated with (optional).
@@ -1033,24 +1055,27 @@ components:
           description: The set of animation steps (optional).
           items:
             $ref: '#/components/schemas/AnimationStep'
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     FilteredView:
       type: object
       description: Represents a view on top of a view, which can be used to include or exclude specific elements.
       properties:
+        key:
+          type: string
+          description: A unique identifier for this view.
+        order:
+          type: number
+          description: An integer representing the creation order of this view.
         title:
           type: string
           description: The title of this view (optional).
         description:
           type: string
           description: The description of this view.
-        key:
-          type: string
-          description: A unique identifier for this view.
+        properties:
+          type: object
+          description: A set of arbitrary name-value properties.
+          additionalProperties: true
         baseViewKey:
           type: string
           description: The key of the view on which this filtered view is based.
@@ -1065,10 +1090,6 @@ components:
           description: The set of tags to include/exclude elements/relationships when rendering this filtered view.
           items:
             type: string
-        properties:
-          type: object
-          description: A set of arbitrary name-value properties.
-          additionalProperties: true
 
     ImageView:
       type: object
