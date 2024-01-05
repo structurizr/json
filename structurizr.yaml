@@ -1558,7 +1558,7 @@ components:
           enum:
             - Public
             - Private
-        cope:
+        scope:
           type: string
           description: The scope of the workspace (can be unset for unscoped).
           enum:
