@@ -15,7 +15,7 @@ is the recommended tool for creating a workspace.
 In addition to the JSON schema, workspaces are also subject to the following rules, which are implemented by the [Structurizr for Java library](https://github.com/structurizr/java):
 
 - Element and relationship IDs must be unique.
-- View keys must be unique.
+- View `key` and `order` properties must be unique across all views.
 - Software and people names must be unique.
 - Container names must be unique within the context of a software system.
 - Component names must be unique within the context of a container.
