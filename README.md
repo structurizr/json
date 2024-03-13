@@ -9,8 +9,6 @@ is the recommended tool for creating a workspace.
 
 * [OpenAPI 3.0 definition ](structurizr.yaml)
 * [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/structurizr/json/master/structurizr.yaml)
-* [Examples](https://github.com/structurizr/examples)
-* [JSON demo page](https://structurizr.com/json)
 
 ## Workspace validation rules
 
